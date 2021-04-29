@@ -1,0 +1,127 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --shadow: -1px 5px 6px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px 8px 8px 8px;
+
+  --color-green: rgb(0, 215, 0);
+  --color-red: tomato;
+  --color-black: #252525;
+
+  --font-size: 18px;
+
+  --animation-duration: 0.3s;
+  --animation-name: ease-in-out;
+}
+
+.container {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body {
+  color: var(--color-black);
+  font-family: sans-serif;
+  font-size: var(--font-size);
+}
+
+.button {
+  background-color: var(--color-red);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all var(--animation-duration) var(--animation-name);
+  &:hover {
+    background-color: darken(tomato, 5);
+  }
+}
+
+.form {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  &-input {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 20px;
+    &__label {
+      margin-bottom: 5px;
+    }
+    &__input {
+      border-radius: var(--border-radius);
+      width: 100%;
+      padding: 15px 20px;
+      box-shadow: var(--shadow);
+      transition: all var(--animation-duration) var(--animation-name);
+      &:focus {
+        box-shadow: -1px 5px 6px rgba(255, 99, 71, 0.3);
+      }
+    }
+  }
+  &__button {
+    width: 100%;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.todo-content {
+  padding: 40px;
+  margin-top: 30px;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+}
+
+.todo-item {
+  font-size: 14px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  &__button {
+    transition: all var(--animation-duration) var(--animation-name);
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0 4px;
+    &--success {
+      color: var(--color-green);
+      &:hover {
+        color: lighten(rgb(0, 215, 0), 10);
+      }
+    }
+    &--delete {
+      color: var(--color-red);
+      &:hover {
+        color: lighten(tomato, 10);
+      }
+    }
+  }
+}
